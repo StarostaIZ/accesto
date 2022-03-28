@@ -15,7 +15,7 @@ class NotifierChain implements Notifier
 
     public function __construct(iterable $notifiers)
     {
-        $this->notifiers = iterator_to_array($notifiers);
+        $this->notifiers = $notifiers instanceof \Traversable ? iterator_to_array($notifiers) : $notifiers;
     }
 
     public function send(Notification $notification)

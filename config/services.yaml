@@ -21,6 +21,8 @@ services:
             - '../src/Kernel.php'
             - '../src/Tests/'
 
+    App\Application\Notification\DummyEmailNotifier:
+        tags: ['app.notifier']
     App\Application\Notification\NotifierChain:
         arguments:
           - !tagged_iterator app.notifier
