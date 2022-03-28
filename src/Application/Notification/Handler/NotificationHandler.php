@@ -18,6 +18,7 @@ class NotificationHandler implements MessageHandlerInterface
     {
         $this->notifierChain = $notifierChain;
     }
+
     public function __invoke(Notification $notification)
     {
         $this->notifierChain->send($notification);

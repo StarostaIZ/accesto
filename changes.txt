@@ -1,0 +1,4 @@
+DummyEmailNotifier - type declaration
+NotifierChain - redundant initializer, `instanceof` check (already added)
+AssignTaskHandler - Multiple arguments in new lines looks better (already changed)
+
