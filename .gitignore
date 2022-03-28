@@ -20,3 +20,5 @@
 ###< phpunit/phpunit ###
 
 .php-cs-fixer.cache
+
+.idea
