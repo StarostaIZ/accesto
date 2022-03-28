@@ -14,15 +14,13 @@ class InMemoryTaskRepository implements TaskRepository
 
     public function save(Task $task): void
     {
-        array_unshift($this->tasks, $task);
+        $this->tasks[$task->getId()] = $task;
     }
 
     public function get(int $id): Task
     {
-        foreach ($this->tasks as $task) {
-            if ($task->getId()==$id){
-                return $task;
-            }
+        if (array_key_exists($id, $this->tasks)) {
+            return $this->tasks[$id];
         }
         throw new TaskNotFoundException($id);
     }
